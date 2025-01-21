@@ -17,6 +17,30 @@ public class LinkedList {
 	}
 	
 	/**
+	 * Gets the first node of the list
+	 * @return The first node of the list.
+	 */		
+	public Node getFirst() {
+		return this.first;
+	}
+
+	/**
+	 * Gets the last node of the list
+	 * @return The last node of the list.
+	 */		
+	public Node getLast() {
+		return this.last;
+	}
+	
+	/**
+	 * Gets the current size of the list
+	 * @return The size of the list.
+	 */		
+	public int getSize() {
+		return this.size;
+	}
+	
+	/**
 	 * Gets the node located at the given index in this list. 
 	 * 
 	 * @param index
@@ -42,6 +66,7 @@ public class LinkedList {
 
 		return null;
 	}
+
 	
 	/**
 	 * Creates a new Node object that points to the given memory block, 
@@ -127,7 +152,7 @@ public class LinkedList {
 	 */
 	public MemoryBlock getBlock(int index) {
 		//// Replace the following statement with your code
-			if (index < 0 || index > size-1) {
+		if (index < 0 || index > size-1) {
 			throw new IllegalArgumentException(
 					"index must be between 0 and size");
 		}
@@ -169,7 +194,6 @@ public class LinkedList {
 	 */
 	public void remove(Node node) {
 		//// Write your code here
-
 		if (p == null) {
 			return;
 		}
@@ -200,8 +224,8 @@ public class LinkedList {
 	public void remove(int index) {
 		//// Write your code here
 		if (index < 0 || index > size-1) {
-		throw new IllegalArgumentException(
-			"index must be between 0 and size");
+			throw new IllegalArgumentException(
+				"index must be between 0 and size");
 		}
 
 	    if (index == 0) {
@@ -248,17 +272,9 @@ public class LinkedList {
 	        p = p.next;
 	    }
 
-	    throw new IllegalArgumentException("The given block is not in the list.");
-	}
-
-
-	/**
-	 * Returns an iterator over this list, starting with the first element.
-	 */
-	public ListIterator iterator(){
-		return new ListIterator(first);
 	}
 	
+
 	/**
 	 * A textual representation of this list, for debugging.
 	 */
